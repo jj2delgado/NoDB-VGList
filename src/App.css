@@ -1,1 +1,57 @@
-
+.App{
+    height: 100vh;
+    width: 100vw;
+    background: url('https://images.unsplash.com/photo-1487925876428-ebd8a23ee1d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+    
+}
+.App-Body-Container{
+    display: flex;
+    justify-content: center;
+    align-items: space-between
+}
+.Inputs-Container{
+    height: 40vh;
+    width: 35vw;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+    position: sticky;
+    top: 0
+}
+.Videogame-Container{
+    height: 30vh;
+    width: 60vw;
+    margin-left: 30px
+}
+#Add-Game{
+  padding: 6px 20px;
+  border: 1px solid #bbb;
+  font: bold 13px arial, helvetica, sans-serif;
+  color: black;
+  width: 60%;
+  border-radius: 3px
+}
+h3{
+    color: white;
+    margin-bottom: -10px
+}
+button{
+    margin-bottom: 10px;
+}
+.imageInput{
+    width: 80%
+}
+.titleInput{
+    width: 80%
+}
+#Review-Input{
+    width: 80%;
+    height: 20%
+}
+.ratingInput{
+    width: 30%;
+    text-align: center
+}

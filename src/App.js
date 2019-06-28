@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import axios from 'axios'
-import VideogameList from './components/videogameList'
-import Header from './components/header'
+import VideogameList from './components/videogameList/videogameList'
+import Header from './components/header/header'
+import './App.css'
 
 class App extends Component {
   constructor(){
@@ -13,7 +14,8 @@ class App extends Component {
       vgimage: '',
       vgtitle: '',
       vgreview: '',
-      vgrating: ''
+      vgrating: '',
+      currentVideogame: {}
     }
     this.handleImageInput = this.handleImageInput.bind(this)
     this.handleTitleInput = this.handleTitleInput.bind(this)
@@ -21,6 +23,7 @@ class App extends Component {
     this.handleRatingInput = this.handleRatingInput.bind(this)
     this.addVideoGame = this.addVideoGame.bind(this)
     this.deleteVideoGame = this.deleteVideoGame.bind(this)
+    this.editVideoGame = this.editVideoGame.bind(this)
   }
   componentDidMount(){
     axios.get('/api/videogames').then(res => {
@@ -55,33 +58,37 @@ class App extends Component {
       this.setState({favVideoGames: res.data})
     }).catch(err => console.log('error', err))
   }
-  editVideoGame(id, review, rating){
-    axios.put(`/api/videogames/${id}?review=${review}rating=${rating}`).then(res => {
+  editVideoGame(id, videogame){
+    axios.put(`/api/videogames/${id}`, videogame).then(res => {
       this.setState({favVideoGames: res.data})
     }).catch(err => console.log('error', err))
   }
   
   render(){
+    console.log(this.state.favVideoGames)
     return (
       <div className="App">
         <Header/>
+        <div className="App-Body-Container">
+        <div className="Inputs-Container">
+          <h3>Add a New Game</h3>
+          <input className="imageInput" placeholder="Image URL" onChange={this.handleImageInput}/>
+          <input className="titleInput" placeholder="Video Game Title" onChange={this.handleTitleInput}/>
+          <textarea id="Review-Input"className="reviewInput" placeholder="Your Review" onChange={this.handleReviewInput}/>
+          <input className="ratingInput" placeholder="Your Rating" onChange={this.handleRatingInput}/>
+          <button id="Add-Game"className="addGame" onClick={this.addVideoGame}>Add Video Game</button>
+        </div>
+        <div className="Videogame-Container">
         <VideogameList videogames={this.state.favVideoGames}
           deletegame={this.deleteVideoGame}
           editgame={this.editVideoGame}
+          setEdit={this.setEdit}
         />
-        <div>
-          <input className="imageInput" placeholder="Image URL" onChange={this.handleImageInput}/>
-          <input className="titleInput" placeholder="Video Game Title" onChange={this.handleTitleInput}/>
-          <input className="reviewInput" placeholder="Your Review" onChange={this.handleReviewInput}/>
-          <input className="ratingInput" placeholder="Your Rating" onChange={this.handleRatingInput}/>
         </div>
-        <div>
-          <button className="addGame" onClick={this.addVideoGame}>Add Video Game</button>
+        
         </div>
       </div>
     )
   }
-  
 }
-
 export default App;

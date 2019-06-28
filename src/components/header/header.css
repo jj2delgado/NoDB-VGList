@@ -1,0 +1,14 @@
+.Titlecontainer{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,.6)
+}
+.Title{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    font-weight: 200;
+    margin-left: 5vw;
+}

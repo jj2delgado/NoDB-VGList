@@ -1,10 +1,10 @@
 import React from 'react'
-import Videogame from './videogame'
+import Videogame from '../videogame/videogame'
 
 export default function VideogameList(props){
-    let {deletegame, editgame} = props
+    let {deletegame, editgame, setEdit} = props
     return(
-        <div>
+        <div className="DoesThisWork">
             {props.videogames.map(videogame => {console.log(videogame)
                 return(<Videogame 
                     key={videogame.id}
@@ -15,6 +15,7 @@ export default function VideogameList(props){
                     rating={videogame.rating}
                     delete={deletegame}
                     edit={editgame}
+                    setEdit={setEdit}
                 />
                 )})}
 

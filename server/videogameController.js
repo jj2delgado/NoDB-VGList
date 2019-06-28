@@ -1,5 +1,5 @@
 const videogames = [
-    {image: `https://news.xbox.com/en-us/wp-content/uploads/sekiro_launch_hero-hero.jpg`,
+    {image: `https://cdn-cf.gamivo.com/image_cover.jpg?f=44785&n=05573758049590405.jpg&h=45ceb7682d4872ef348f73217497389e`,
      title: 'Sekiro: Shadows Die Twice',
      review: 'From the same creators of the Soulsborne series, comes this challenging title set in imperial Japan, this challenging game will push you to your limits',
      rating: 5,
@@ -41,8 +41,10 @@ module.exports = {
            rating,
            review
        }
+       console.log(videogames)
        let index = videogames.findIndex(videogame => videogame.id === +id)
        videogames[index] = {...videogames[index], ...updatedVideogame} 
+       console.log(videogames)
        res.status(200).send(videogames)
     }
 
