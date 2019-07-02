@@ -16,3 +16,14 @@ button{
     color: black;
     border-radius: 3px
 }
+.Edit-Review{
+    height: 50px;
+    width: 40%
+}
+.Edit-Rating{
+    width: 10%;
+    text-align: center;
+}
+button:hover{
+    color: white;
+}

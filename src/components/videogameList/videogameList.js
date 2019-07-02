@@ -5,6 +5,7 @@ export default function VideogameList(props){
     let {deletegame, editgame, setEdit} = props
     return(
         <div className="DoesThisWork">
+            {/* map over video game list and give each one a key value, pass properties down to videogame child */}
             {props.videogames.map(videogame => {console.log(videogame)
                 return(<Videogame 
                     key={videogame.id}

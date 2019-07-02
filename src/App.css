@@ -1,13 +1,14 @@
 .App{
     height: 100vh;
     width: 100vw;
-    background: url('https://images.unsplash.com/photo-1487925876428-ebd8a23ee1d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
-
+    background: url('https://asia.playstation.com/content/dam/pscom/sea/campaign/id-warranty/Indonesia%20Warranty%20Campaign.jpg');
+    overflow: scroll;
 }
 .App-Body-Container{
     display: flex;
     justify-content: center;
-    align-items: space-between
+    align-items: flex-start;
+    height: 300vh;
 }
 .Inputs-Container{
     height: 40vh;
@@ -19,11 +20,11 @@
     justify-content: space-between;
     margin-left: 30px;
     position: sticky;
-    top: 0
+    top: 0;
 }
 .Videogame-Container{
     height: 30vh;
-    width: 60vw;
+    width: 58vw;
     margin-left: 30px
 }
 #Add-Game{
@@ -54,4 +55,10 @@ button{
 .ratingInput{
     width: 30%;
     text-align: center
+}
+button:hover{
+    color: white;
+}
+#Add-Game:hover{
+    color: white;
 }
